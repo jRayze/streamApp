@@ -1,8 +1,16 @@
-import 'dotenv/config';
+import dotenv  from "dotenv"
 import http from 'http';
-import dataBaseManager from './models/conf.js';
+import createDatabase from './models/conf.js'
+import dataBaseManager from './models/databaseManager.js';
 
 const PORT = process.env.PORT || 5000;
+
+dotenv.config();
+
+createDatabase("createDB", {
+    'dbName' : 'streamApp',
+    'collection' : 'users',
+}, {});
 
 dataBaseManager("add", {
     'dbName' : 'streamApp',
