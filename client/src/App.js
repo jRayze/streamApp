@@ -3,7 +3,7 @@ import Board from './components/Board.jsx';
 import Header from './components/Header.jsx';
 import { useState } from 'react';
 
-const App = () => {
+const App = () => { 
   const [data, setData] = React.useState(null);
   const [textSearch, setTextSearch] = useState('');
 

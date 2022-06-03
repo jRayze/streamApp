@@ -1,6 +1,6 @@
 import { MongoClient } from 'mongodb';
 
-var url = "mongodb+srv://admin:admin@cluster0.2de1t.mongodb.net/"
+var url = "mongodb+srv://admin:admin@cluster0.voj6a.mongodb.net/" //"mongodb+srv://admin:admin@cluster0.2de1t.mongodb.net/"
 
 const dataBaseManager = (action, data, query) => {
     if (action === 'add') {
