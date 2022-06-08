@@ -8,7 +8,7 @@ const App = () => {
   const [textSearch, setTextSearch] = useState('');
 
   React.useEffect(() => {
-    fetch("/api")
+    fetch("/api", { mode : 'no-cors'})
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
