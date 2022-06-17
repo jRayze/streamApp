@@ -1,0 +1,11 @@
+GET= Recuperer information
+PUT= Ajouter contenue
+POST= 
+DELETE= Supprimer
+UPDATE= Mettre a jour
+
+
+GET /get/movie/
+GET /get/movie/:id
+GET /get/movie/:id
+

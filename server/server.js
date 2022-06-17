@@ -21,8 +21,13 @@ app.use(cors());
 const router = new Router();
 
 // Try with YT API because i didn't found working well torrent api
-const searchVideo = async (textSearch) => {
-    const request = `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=`+textSearch+`&type=video&key=`+process.env.REACT_APP_YT_KEY;
+const searchVideo = async (param) => {
+    const apiUrl = 'https://youtube.googleapis.com/youtube/v3/search?part=snippet';
+    const request = apiUrl
+                    +`&maxResults=30&q=`
+                    +param
+                    +`&type=video&key=`
+                    +process.env.REACT_APP_YT_KEY;
     const res = fetch(
         request,
         {mode: 'no-cors'}
@@ -34,13 +39,18 @@ const searchVideo = async (textSearch) => {
 } 
 
 router
-    .get("/", (ctx) => {
+    .get("/", (ctx) => { 
         ctx.body = `Hello Home`;
     })
-    .get("/api", async (ctx) => {
+    .get("/api", async (ctx) => { 
         const context = ctx.params
-        // ctx.body = await searchTorrent();
-        ctx.body = await searchVideo('Laylow');
+        console.log(ctx.params);
+        ctx.body = await searchVideo('');
+    })
+    .get("/api/search/:query", async (ctx) => {
+        const context = ctx.params
+        console.log(ctx.params.query);
+        ctx.body = await searchVideo(ctx.params.query);
     })
     .get('/search', (ctx) => {
         const ret = ctx.params
