@@ -59,7 +59,7 @@ const Video = ({dataVideo}) => {
     console.log(dataVideo);
     return (
         <div className='xxlargeFormat xlargeFormat largeFormat mediumFormat smallFormat xsmallFormat card cards'>
-            <img src={dataUrl} alt={dataVideo.snippet.title} />
+            <img src={dataUrl} alt={dataVideo.snippet.title} onClick={(e) => window.location.href=videoUrl} />
             <h3 style={{marginTop: "12px", height: "44px"}}>
                 <a href={videoUrl} className='videoLink'>
                     <p className='videoTitle'>{ decodeHTMLEntities(dataVideo.snippet.title)}</p>

@@ -14,6 +14,7 @@ const Badge = styled.button`
     font-size: 13px !important;
     margin: 12px 12px 12px 0px;
     cursor: pointer;
+    min-inline-size: fit-content;
 
     ${props => props.active && css`
         background: white;

@@ -15,7 +15,6 @@ const Container = styled.div `
 const Row = styled.div`
     display: flex;
     flex-wrap: wrap;
-    margin: 20px;
 `;
 
 const Board = ({textSearch, setTextSearch}) => {

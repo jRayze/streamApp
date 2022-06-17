@@ -54,6 +54,7 @@ body {
     width: 100%;
 
     display: flex;
+    overflow: hidden;
 
     align-items: center;
     align-content: space-between;
@@ -114,6 +115,8 @@ body {
     color: white;
     text-overflow: ellipsis;
     max-width: fit-content;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
 }
 
 .infosVideo {
@@ -220,16 +223,16 @@ body {
     }
 }
 
-@media  (min-width: 1200px) and (max-width: 1965px) {
+@media  (min-width: 1500px) and (max-width: 1965px) {
     .largeFormat {
         flex-grow: 0 !important;
         flex-shrink: 0 !important;
         flex-basis: auto !important;
-        width: 25% !important;
+        width: calc(100%5) !important;
     }
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media (min-width: 992px) and (max-width: 1500px) {
     .mediumFormat {
         flex-grow: 0 !important;
         flex-shrink: 0 !important;
@@ -252,6 +255,6 @@ body {
         flex-grow: 0 !important;
         flex-shrink: 0 !important;
         flex-basis: auto !important;
-        width: 50% !important;
+        width: 45% !important;
     }
 }

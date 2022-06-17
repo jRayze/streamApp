@@ -22,7 +22,7 @@ const ProfileBar = () => {
     //setLetter('J');
     return (
         <Circle >
-            {letter}
+            <span style={{marginBottom: "5px"}} >{letter}</span>
         </Circle>
     );
 };

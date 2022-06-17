@@ -1,11 +1,53 @@
-GET= Recuperer information
-PUT= Ajouter contenue
-POST= 
-DELETE= Supprimer
-UPDATE= Mettre a jour
+Structure API with CRUD method :
 
+CREATE  =>  POST   
+READ    =>  GET    
+UPDATE  =>  PUT    
+DELETE  =>  DELETE 
 
-GET /get/movie/
-GET /get/movie/:id
-GET /get/movie/:id
+-------
+CREATE
+-------
+
+/* Torrent table */
+POST /api/movie/create     | Download movie
+
+/* User table */
+POST /api/user/create      | Create User
+
+-------
+READ 
+-------
+
+/* External Torrent API */
+GET /api/search             | List of all default movies (most popular)
+GET /api/search/:value      | List of all movies that match value
+
+/* Torrent table */
+GET /api/movie              | List of all movies downloaded and stats
+GET /api/movie/:id          | Stats of movie linked to id
+
+/* User table */
+GET /api/user/:id           | User info
+
+-------
+UPDATE
+-------
+
+/* Torrent table */
+PUT /api/update/movie/:id   | Update stats of movies ('nbViewed', 'lastView',...)
+
+/* User table */
+PUT /api/update/user/:id    | Update user info (name, viewed movies,...)
+
+-------
+DELETE
+-------
+
+/* Torrent table */
+DELETE /api/movie/:id       | Delete unused torrent from 7days
+
+/* User table */
+DELETE /api/user/delete/:id | Delete user
+
 

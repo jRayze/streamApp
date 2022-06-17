@@ -52,24 +52,12 @@ router
         console.log(ctx.params.query);
         ctx.body = await searchVideo(ctx.params.query);
     })
-    .get('/search', (ctx) => {
-        const ret = ctx.params
-        fetch('')
-        console.log(ctx);
-        ctx.body = `test search`;
-    })
-    .post("/", (ctx) => {
-        console.log("ctx.request.body", ctx.request.body);
-        ctx.body = {...ctx.request.body, date: new Date()};
-    })
 
 app
     .use(router.routes())
     .use(router.allowedMethods())
     .use(cors())
     .use((ctx) => {
-        if (ctx.path === "/favicon.ico") return;
-
         ctx.body = "Hello World !";
     })
 
