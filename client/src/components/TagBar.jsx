@@ -36,13 +36,13 @@ const TagBar = ({textSearch, updateSearch}) => {
     return (
         <div className='tagBar'>
             <Badge first active onClick={(e) => addToSearch(e.target.textContent)}>Tous</Badge>
-            <Badge onClick={(e) => addToSearch(e.target.textContent)}>League Of Legend</Badge>
+            <Badge onClick={(e) => addToSearch(e.target.value)}>League Of Legend</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Rap</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Orelsan</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Laylow</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Primitif</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Vald</Badge>
-            <Badge onClick={(e) => addToSearch(e.target.textContent)} >Jeux</Badge>
+            <Badge onClick={(e) => addToSearch(e.target.textContent)}>Jeux</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Call of duty</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>Dofus</Badge>
             <Badge onClick={(e) => addToSearch(e.target.textContent)}>France</Badge>

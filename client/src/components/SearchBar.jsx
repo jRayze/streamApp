@@ -3,17 +3,17 @@ import searchIcon from '../assets/search.svg';
 
 const SearchBar = ({textSearch, updateSearch}) => {
 
-
-    const setValue = (val) => {
-        console.log(val);
-        document.getElementById('searchInput').setAttribute('value', val);
+    const search = (e) => {
+        e.preventDefault()
+        const searchBar = document.getElementById('searchInput')
+        updateSearch(searchBar.value);
+        searchBar.value = '';
     }
-
     return (
         <>
             <div className='searchBar'>
-                <form className="form-inline" id="formSearch">
-                    <input onChange={(e) => {updateSearch(e.target.value)}} id="searchInput" className="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search"/>
+                <form onSubmit={(e) => {search(e)}} className="form-inline" id="formSearch" action=''>
+                    <input id="searchInput" className="form-control mr-sm-2" type="search" placeholder="Rechercher" aria-label="Search" />
                     <button className="btn btn-outline-success my-2 my-sm-0" id='buttonSearch' type="submit">
                         <img id="searchIcon" src={searchIcon} alt="" />
                     </button>

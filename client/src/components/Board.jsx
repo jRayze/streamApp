@@ -17,13 +17,16 @@ const Row = styled.div`
     flex-wrap: wrap;
 `;
 
+
+
 const Board = ({textSearch, setTextSearch}) => {
 
     const [req, setReq] = useState([]);
     useEffect(() => {
-        axios.get(`http://localhost:3001/api/search/${textSearch}`)
+        const key = /*Enter Api Key*/
+        axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=30&q=${textSearch}&type=video&key=${key}`)
         .then((response) => {
-            console.log(response);
+            console.log(response.config.url);
             setReq(response.data.items);
         })
     }, [textSearch]);
